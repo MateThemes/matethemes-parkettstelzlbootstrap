@@ -1,5 +1,22 @@
-title = "Default"
 description = "Default Layout for Page Tailor Entries & CMS Pages"
+title = "Default"
 
+[global settings]
+handle = "Content\Settings"
 ==
-{% page %}
+<!DOCTYPE html>
+<html lang="{{ this.site.locale }}">
+    <head>
+        {% partial 'head' %}
+    </head>
+    <body>
+        {% partial "preloader" %}
+        <main class="page-wrapper">
+        {% partial "header" %}
+
+        {% page %}
+
+        </main>
+        {% partial "footer" %}
+    </body>
+</html>
