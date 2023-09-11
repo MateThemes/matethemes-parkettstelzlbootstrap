@@ -2,7 +2,7 @@
 handle = "Content\Settings"
 ==
 <meta charset="utf-8">
-<title>Around | Corporate</title>
+<title>{{ this.page.meta_title }} | {{ settings.website_name }}</title>
 <!-- Viewport-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- SEO Meta Tags-->
@@ -11,129 +11,127 @@ handle = "Content\Settings"
     content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, dark mode, html5, css3, javascript, gallery, slider, touch, creative">
 <meta name="author" content="Createx Studio">
 <!-- Theme mode-->
-<script>
+  <script>
     let mode = window.localStorage.getItem('mode'),
-        root = document.getElementsByTagName('html')[0];
+      root = document.getElementsByTagName('html')[0];
     if (mode !== undefined && mode === 'dark') {
-        root.classList.add('dark-mode');
+      root.classList.add('dark-mode');
     } else {
-        root.classList.remove('dark-mode');
+      root.classList.remove('dark-mode');
     }
-</script>
-<!-- Page loading styles-->
-<style>
+  </script>
+  <!-- Page loading styles-->
+  <style>
     .page-loading {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-transition: all .4s .2s ease-in-out;
-        transition: all .4s .2s ease-in-out;
-        background-color: #fff;
-        opacity: 0;
-        visibility: hidden;
-        z-index: 9999;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
     }
 
     .dark-mode .page-loading {
-        background-color: #121519;
+      background-color: #121519;
     }
 
     .page-loading.active {
-        opacity: 1;
-        visibility: visible;
+      opacity: 1;
+      visibility: visible;
     }
 
     .page-loading-inner {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-        -webkit-transition: opacity .2s ease-in-out;
-        transition: opacity .2s ease-in-out;
-        opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
     }
 
     .page-loading.active>.page-loading-inner {
-        opacity: 1;
+      opacity: 1;
     }
 
     .page-loading-inner>span {
-        display: block;
-        font-family: 'Inter', sans-serif;
-        font-size: 1rem;
-        font-weight: normal;
-        color: #6f788b;
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #6f788b;
     }
 
     .dark-mode .page-loading-inner>span {
-        color: #fff;
-        opacity: .6;
+      color: #fff;
+      opacity: .6;
     }
 
     .page-spinner {
-        display: inline-block;
-        width: 2.75rem;
-        height: 2.75rem;
-        margin-bottom: .75rem;
-        vertical-align: text-bottom;
-        background-color: #d7dde2;
-        border-radius: 50%;
-        opacity: 0;
-        -webkit-animation: spinner .75s linear infinite;
-        animation: spinner .75s linear infinite;
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: .75rem;
+      vertical-align: text-bottom;
+      background-color: #d7dde2;
+      border-radius: 50%;
+      opacity: 0;
+      -webkit-animation: spinner .75s linear infinite;
+      animation: spinner .75s linear infinite;
     }
 
     .dark-mode .page-spinner {
-        background-color: rgba(255, 255, 255, .25);
+      background-color: rgba(255, 255, 255, .25);
     }
 
     @-webkit-keyframes spinner {
-        0% {
-            -webkit-transform: scale(0);
-            transform: scale(0);
-        }
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
 
-        50% {
-            opacity: 1;
-            -webkit-transform: none;
-            transform: none;
-        }
+      50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
     }
 
     @keyframes spinner {
-        0% {
-            -webkit-transform: scale(0);
-            transform: scale(0);
-        }
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
 
-        50% {
-            opacity: 1;
-            -webkit-transform: none;
-            transform: none;
-        }
+      50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
     }
-</style>
-
-{# Page loading script #}
-<script>
-    (function () {
-        window.onload = function () {
-            const preloader = document.querySelector('.page-loading');
-            preloader.classList.remove('active');
-            setTimeout(function () {
-                preloader.remove();
-            }, 1500);
-        };
+  </style>
+  <!-- Page loading scripts-->
+  <script>
+    (function() {
+      window.onload = function() {
+        const preloader = document.querySelector('.page-loading');
+        preloader.classList.remove('active');
+        setTimeout(function() {
+          preloader.remove();
+        }, 1500);
+      };
     })();
-
-</script>
+  </script>
 
 <!-- Import Google Font-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,7 +139,7 @@ handle = "Content\Settings"
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"
     id="google-font">
 <!-- Vendor styles-->
-<link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css" />
-<link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css" />
+<link rel="stylesheet" media="screen" href="{{ 'assets/vendor/swiper/swiper-bundle.min.css'|theme }}" />
+<link rel="stylesheet" media="screen" href="{{ 'assets/vendor/aos/dist/aos.css'|theme }}" />
 <!-- Main Theme Styles + Bootstrap-->
-<link rel="stylesheet" media="screen" href="{{ "assets/css/theme.min.css"|theme }}">
+<link rel="stylesheet" media="screen" href="{{ 'assets/css/theme.min.css'|theme }}">
